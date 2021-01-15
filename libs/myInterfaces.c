@@ -27,8 +27,9 @@ void stackInterface(){
         break;
       
       case 'p':
+        printf("> POP: ");
         val= pop(&stk);
-        printf("> POP: %i\n", val);
+        if(val != -1) printf("%i\n", val);
         break;
       
       case 's':

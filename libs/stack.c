@@ -13,13 +13,18 @@ void push(stack **stk, int x){
 }
 
 int pop(stack **stk){
-  int num;
-  stack *aux;
-  aux= *stk;
-  *stk= aux->next;
-  num= aux->key;
-  free(aux);
-  return num;
+  if(*stk == NULL){
+    printf("Empty stack\n");
+    return -1;
+  }else{
+    int num;
+    stack *aux;
+    aux= *stk;
+    *stk= aux->next;
+    num= aux->key;
+    free(aux);
+    return num;
+  }
 }
 
 void printStack(stack *stk){
