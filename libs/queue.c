@@ -9,7 +9,7 @@ void insertInQueue(queue *kyu, int num){
   newQueue= malloc(sizeof(queue));
   newQueue->key = num;
   newQueue->next= NULL; 
-  if(*kyu == NULL) *kyu = newQueue;
+  if(*kyu == NULL) *kyu = newQueue;      //Inserts the new member in the end of the list
   else{
     while(aux->next != NULL) aux= aux->next;
     aux->next = newQueue;
@@ -33,11 +33,11 @@ void removeFromQueue(queue *kyu, int num){
   if (*kyu == NULL) return;
   
   queue aux1 = *kyu;  
-  if(aux1->key == num){
+  if(aux1->key == num){ //Verifies the first member of the queue
     *kyu= aux1->next;
     free(aux1);
   }
-  while(aux1->next != NULL){
+  while(aux1->next != NULL){ //Verifies the members between the first and the last of the queue
     if((aux1->next)->key == num){
       queue aux2 = aux1->next;
       aux1->next = aux2->next;
@@ -46,8 +46,7 @@ void removeFromQueue(queue *kyu, int num){
     }
     aux1= aux1->next;
   }
-  if(aux1->key == num){
-    //free(aux1->next);
+  if(aux1->key == num){ //Verifies the last member of the queue
     aux1 = NULL;
   }
 }

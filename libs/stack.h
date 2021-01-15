@@ -1,8 +1,8 @@
-/* Define a simple Stack library.
-   It's created for educational purposes.
-   Lib created by
-   Date: 
-*/
+/** Defines a simple List library.
+ *  Created for educational purposes.
+ *  Lib created by https://github.com/wanderlinoliveira
+ *  May/2017
+ * */
 
 #ifndef __STACK_H__
 #define __STACK_H__
@@ -10,22 +10,22 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* Define the stack type. */
+/* Defines the stack type. */
 typedef struct type{
   int key;
   struct type* next;
 }stack;
 
-/* It inits the list. Required to use the list. */
+/* Inits the list. Required to use the list. */
 void createStack(stack **);
 
-/* Insert in the stack. */
+/* Pushes in the stack. */
 void push(stack **, int);
 
 /* Pops the stack. */
 int pop(stack **);
 
-/* Print the Stack. */
+/* Prints the Stack. */
 void printStack(stack *);
 
 

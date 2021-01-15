@@ -1,8 +1,8 @@
-/* Define a simple Queue library.
-   It's created for educational purposes.
-   Lib created by
-   Date: 
-*/
+/** Defines a simple List library.
+ *  Created for educational purposes.
+ *  Lib created by https://github.com/wanderlinoliveira
+ *  May/2017
+ * */
 
 #ifndef __QUEUE_H__
 #define __QUEUE_H__
@@ -10,28 +10,28 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* Define the queue type. */
+/* Defines the queue type. */
 typedef struct kyu{
   unsigned int key;
   struct kyu *next;
 }*queue;
 
-/* It inits the queue. Required to use the queue. */
-void initQueue(queue *kyu);
+/* Inits the queue. Required to use the queue. */
+void initQueue(queue *);
 
-/* Add a new member in the queue. */
-void insertInQueue(queue *kyu, int num);
+/* Adds a new member in the queue. */
+void insertInQueue(queue *, int);
 
 /* Returns the next member of the queue. */
-int nextInQueue(queue *kyu);
+int nextInQueue(queue *);
 
 /* Deletes a member by key number. */
-void removeFromQueue(queue *kyu, int num);
+void removeFromQueue(queue *, int);
 
 /* Searches a member by key number and returns the position of the member. */
-int searchInQueue(queue kyu, int num);
+int searchInQueue(queue , int);
 
-/* Print the queue. */
-void printQueue(queue kyu);
+/* Prints the queue. */
+void printQueue(queue);
 
 #endif

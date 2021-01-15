@@ -40,11 +40,11 @@ void removeFromList(list **ls, int num){
   list *aux1;
   aux1= *ls;
 
-  if(aux1->key == num){
+  if(aux1->key == num){ //Verifies the first member of the list
     *ls=aux1->next;
     free(aux1);
   }else{
-    while(aux1->next!=NULL){
+    while(aux1->next!=NULL){ //Verifies the members between the first and the last of the list
       if((aux1->next)->key == num){
         list *aux2= aux1->next;
         aux1->next= aux2->next;
@@ -53,7 +53,7 @@ void removeFromList(list **ls, int num){
       }
       aux1= aux1->next;
     }
-    if(aux1->key == num) aux1 = NULL;
+    if(aux1->key == num) aux1 = NULL; //Verifies the last member of the list
   }
     
 }
